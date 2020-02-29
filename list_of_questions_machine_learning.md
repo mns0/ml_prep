@@ -45,7 +45,7 @@
 	\frac{1}{N}\sum_{i=1}^{N} L(y_i, \hat{f}(x_i))
 	$$
 	
-1. State the uniform convergence theorem and derive it. 
+1. State the uniform convergence theorem and derive it.
 1. What is sample complexity bound of uniform convergence theorem? 
 1. What is error bound of uniform convergence theorem? 
 1. What is the bias-variance trade-off theorem? 
@@ -58,7 +58,18 @@
 
 ## Model and feature selection
 1. Why are model selection methods needed?
+	* Model selection methods estimate the performance of various model to choose the best one which generalizes well
 1. How do you do a trade-off between bias and variance?
+	* Assuming $$ Y = f(X) + \epsilon$$ which $$ E(\epsilon)~=~0$$ and $$Var(\epsilon) = \sigma_\epsilon^2$$~we can derive an expression for our error as
+	
+	$$
+	Err(x_0) = E[Y - \hat{f}(x_0)^2\mid X = x_0]$$
+	$$= \sigma_\epsilon^2 + [E[\hat{f}(x_0)] - f(x_0)]^2 +    E[\hat{f}(x_0) -  E[\hat{f}(x_0)]]^2$$
+	$$= sigma_\epsilon^2 + Bias^2 + Variance
+	$$
+	
+	Variance refers to the model variance and the square bias is the average which the estimate differs from the true mean. Typically the more complex the model becomes, the square bias decreases and the variance increases.
+	
 1. What are the different attributes that can be selected by model selection methods?
 1. Why is cross-validation required?
 1. Describe different cross-validation techniques.
