@@ -149,7 +149,7 @@ class linear_regression(object):
         return np.sum((y_pred - self.Y_test)**2)
 
 
-    def backwards_stepwise_selection(self):
+    def backwards_stepwise_selection(self, plot=False,fname=None):
         '''
             returns a list of variables dropped during each iterations
         '''
@@ -177,6 +177,11 @@ class linear_regression(object):
         self.X_test = x_test_prev
         self.predictors = pred_prev
 
+        if plot:
+            fig, ax = plt.subplots(figsize=(8,8))
+            ax = self.plot_backwards_stepwise_selection(ax)
+            plt.subplot("fname".png)
+            return p_droped, prederr, ax
         return p_dropped, prederr
 
-
+    def plot_backwards_stepwise_selection(ax)
